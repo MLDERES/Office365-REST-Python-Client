@@ -38,7 +38,7 @@ def create_list_item():
 
 if __name__ == '__main__':
     ctxAuth = AuthenticationContext(url=settings['url'])
-    if ctxAuth.acquire_token_for_user(username=settings['username'], password=settings['password']):
+    if ctxAuth.acquire_token_for_user(username=settings['user_credentials']['username'], password=settings['user_credentials']['password']):
         ctx = ClientContext(settings['url'], ctxAuth)
 
         read_list_items()
